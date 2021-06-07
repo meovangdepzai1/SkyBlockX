@@ -2,6 +2,10 @@
 
 > SkyBlock Plugin with SQLite3 Support
 
+# Note
+
+> Partner System Untested, I'd Be Glad If You Could Submit Faults etc. via Discord: 'Revenge.#1006
+
 # Features
 - Partner System
 - Island Lock System
