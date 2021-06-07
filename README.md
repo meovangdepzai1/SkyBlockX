@@ -1,15 +1,15 @@
 # SkyBlockX
 
-SkyBlock Plugin with SQLite3 Support
+> SkyBlock Plugin with SQLite3 Support
 
 # Features
-> Partner System\n
-> Island Lock System\n
-> The System of Seeing the Player on the Island\n
-> Visiting System\n
-> Throwing Players from the Island\n
-> Island Erase System\n
-> Creating an Island with a Generator System\n
+- Partner System
+- Island Lock System
+- The System of Seeing the Player on the Island
+- Visiting System
+- Throwing Players from the Island
+- Island Erase System
+- Creating an Island with a Generator System
 
 # Screenshout
 
