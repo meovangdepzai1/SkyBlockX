@@ -1,0 +1,5 @@
+name: SkyBlockX
+version: 1.0.0
+main: skyblock\Skyblock
+api: 3.19.0
+author: Revenge8516
