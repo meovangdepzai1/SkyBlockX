@@ -6,10 +6,10 @@ namespace skyblock;
 
 use skyblock\command\Island;
 use skyblock\generator\BasicIslandGenerator;
+use skyblock\task\ScoreboardTask;
 
 use pocketmine\level\generator\GeneratorManager;
 use pocketmine\plugin\PluginBase;
-use skyblock\task\ScoreboardTask;
 
 class SkyBlock extends PluginBase
 {
