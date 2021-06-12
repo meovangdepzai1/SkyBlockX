@@ -4,15 +4,15 @@
 namespace skyblock\task;
 
 
+use skyblock\api\ScoreboardAPI;
+use skyblock\SkyBlock;
+
 use onebone\economyapi\EconomyAPI;
-use PHPStan\Rules\Properties\ExistingClassesInPropertiesRule;
 use pocketmine\form\MenuOption;
 use pocketmine\network\mcpe\protocol\RemoveObjectivePacket;
 use pocketmine\Player;
 use pocketmine\scheduler\Task;
 use pocketmine\Server;
-use skyblock\api\ScoreboardAPI;
-use skyblock\SkyBlock;
 
 class ScoreboardTask extends Task
 {
