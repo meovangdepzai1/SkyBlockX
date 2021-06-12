@@ -23,6 +23,7 @@ class SkyBlock extends PluginBase
 	/** @var string */
 	public const PREFIX = "§aSKYBLOCK §8> ";
 
+	/** @var string */
 	public const SCOREBOARD = "§l§6SKYBLOCK";
 
 	public static function getInstance(): SkyBlock
