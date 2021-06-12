@@ -4,7 +4,7 @@
 
 # Note
 
-> Partner System Untested, I'd Be Glad If You Could Submit Faults etc. via Discord: 'Revenge.#1006
+> Partner System Untested, I'd Be Glad If You Could Submit Faults etc. via Discord: 'Revenge.#0001
 
 # Features
 - Partner System
