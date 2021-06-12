@@ -2,9 +2,11 @@
 
 > SkyBlock Plugin with SQLite3 Support
 
-# Note
+# UPDATE v1.0.5
 
-> Partner System Untested, I'd Be Glad If You Could Submit Faults etc. via Discord: 'Revenge.#0001
+> API Version: 3.19.1+dev
+> Add Island Top
+> Add Scoreboard
 
 # Features
 - Partner System
@@ -16,6 +18,10 @@
 - Creating an Island with a Generator System
 
 # Screenshout
+
+![add Scoreboard](https://user-images.githubusercontent.com/81678629/121772168-6a9d2980-cb7c-11eb-8c25-6444285666ef.png)
+
+![add island points](https://user-images.githubusercontent.com/81678629/121772169-6bce5680-cb7c-11eb-9001-1845c84249ca.png)
 
 ![create](https://user-images.githubusercontent.com/81678629/121076458-20fcb980-c7df-11eb-9858-052d4137d7dd.png)
 
