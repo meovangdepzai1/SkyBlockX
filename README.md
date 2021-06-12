@@ -4,9 +4,9 @@
 
 # UPDATE v1.0.5
 
-> API Version: 3.19.1+dev
-> Add Island Top
-> Add Scoreboard
+- API Version: 3.19.1+dev
+- Add Island Top
+- Add Scoreboard
 
 # Features
 - Partner System
