@@ -8,6 +8,7 @@ use skyblock\api\ScoreboardAPI;
 use skyblock\SkyBlock;
 
 use onebone\economyapi\EconomyAPI;
+
 use pocketmine\form\MenuOption;
 use pocketmine\network\mcpe\protocol\RemoveObjectivePacket;
 use pocketmine\Player;
