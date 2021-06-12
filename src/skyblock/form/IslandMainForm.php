@@ -41,7 +41,8 @@ class IslandMainForm extends MenuForm
 				new MenuOption("Island Visit " . $visitText),
 				new MenuOption("Island Visit Open Players"),
 				new MenuOption("Island Partner"),
-				new MenuOption("Island Delete"),
+				new MenuOption("Island Points"),
+				new MenuOption("Island Delete")
 			],
 			function (Player $player, int $dataOption): void {
 				if ($dataOption === 0) {
@@ -63,6 +64,9 @@ class IslandMainForm extends MenuForm
 					$player->sendForm(new IslandPartnerMainForm($player));
 				}
 				if ($dataOption === 6) {
+					$player->sendForm(new IslandPointsForm($player));
+				}
+				if ($dataOption === 7) {
 					$player->sendForm(new IslandDeleteRequireForm($player));
 				}
 			}

@@ -9,6 +9,7 @@ use skyblock\generator\BasicIslandGenerator;
 
 use pocketmine\level\generator\GeneratorManager;
 use pocketmine\plugin\PluginBase;
+use skyblock\task\ScoreboardTask;
 
 class SkyBlock extends PluginBase
 {
@@ -21,6 +22,8 @@ class SkyBlock extends PluginBase
 
 	/** @var string */
 	public const PREFIX = "§aSKYBLOCK §8> ";
+
+	public const SCOREBOARD = "§l§6SKYBLOCK";
 
 	public static function getInstance(): SkyBlock
 	{
@@ -39,9 +42,12 @@ class SkyBlock extends PluginBase
 
 		self::$instance->getServer()->getPluginManager()->registerEvents(new EventListener(), self::$instance);
 
+		self::$instance->getScheduler()->scheduleRepeatingTask(new ScoreboardTask(self::$instance), 20);
+
 		$this->sqlite = new \SQLite3($this->getDataFolder() . "skyblock.db");
 		$this->sqlite->exec("CREATE TABLE IF NOT EXISTS skyblock(player TEXT PRIMARY KEY, islandTeleport TEXT, lock TEXT, visit TEXT, islandName TEXT);");
 		$this->sqlite->exec("CREATE TABLE IF NOT EXISTS partner(player TEXT, partnerIslandName TEXT);");
+		$this->sqlite->exec("CREATE TABLE IF NOT EXISTS islandLevel(player TEXT PRIMARY KEY, blockPlace INT);");
 	}
 
 }
