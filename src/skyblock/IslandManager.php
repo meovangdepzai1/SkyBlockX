@@ -136,7 +136,7 @@ class IslandManager
 		#SQLITE Delete
 		SkyBlock::getInstance()->sqlite->query("DELETE FROM skyblock WHERE player = '$name'");
 		SkyBlock::getInstance()->sqlite->query("DELETE FROM partner WHERE partnerIslandName = '$name'");
-		SkyBlock::getInstance()->sqlite->query("DELETE FROM islandLevel WHERE player = '$name'");
+		SkyBlock::getInstance()->toplevel->query("DELETE FROM islandLevel WHERE player = '$name'");
 		#DELETE ISLAND WORLD
 		$dir = Server::getInstance()->getDataPath() . "worlds/" . $player->getName() . "/region";
 		$dir = rtrim($dir, "/\\") . "/";

@@ -4,6 +4,8 @@
 namespace skyblock;
 
 
+use skyblock\task\ScoreboardTask;
+
 use pocketmine\event\block\BlockBreakEvent;
 use pocketmine\event\block\BlockPlaceEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
@@ -25,13 +27,15 @@ class EventListener implements Listener
 	{
 		$player = $event->getPlayer();
 		$name = $player->getName();
-		$database = SkyBlock::getInstance()->sqlite->query("SELECT * FROM islandLevel WHERE player = '$name';");
+		$database = SkyBlock::getInstance()->toplevel->query("SELECT * FROM islandLevel WHERE player = '$name';");
 		if (empty($database->fetchArray(SQLITE3_ASSOC))) {
-			$database = SkyBlock::getInstance()->sqlite->prepare("INSERT INTO islandLevel (player, blockPlace) VALUES (:player, :blockPlace);");
+			$database = SkyBlock::getInstance()->toplevel->prepare("INSERT INTO islandLevel (player, blockPlace) VALUES (:player, :blockPlace);");
 			$database->bindValue(":player", $player->getName());
-			$database->bindValue(":blockPlace", 0);
+			$database->bindValue(":blockPlace", "0");
 			$database->execute();
 		}
+
+		SkyBlock::getInstance()->getScheduler()->scheduleRepeatingTask(new ScoreboardTask(SkyBlock::getInstance()), 20);
 	}
 
 	/**
@@ -98,7 +102,7 @@ class EventListener implements Listener
 					$player->addTitle("", "§cIsland Owner is not your friend");
 				} else {
 					$name = $player->getName();
-					SkyBlock::getInstance()->sqlite->query("UPDATE islandLevel SET blockPlace = blockPlace - 1 WHERE player = '$name'");
+					SkyBlock::getInstance()->toplevel->query("UPDATE islandLevel SET blockPlace = blockPlace - 1 WHERE player = '$name'");
 				}
 			} else {
 				if ($player->getName() != $player->getLevelNonNull()->getFolderName()) {
@@ -106,7 +110,7 @@ class EventListener implements Listener
 					$player->addTitle("", "§cIsland is lock");
 				} else {
 					$name = $player->getName();
-					SkyBlock::getInstance()->sqlite->query("UPDATE islandLevel SET blockPlace = blockPlace - 1 WHERE player = '$name'");
+					SkyBlock::getInstance()->toplevel->query("UPDATE islandLevel SET blockPlace = blockPlace - 1 WHERE player = '$name'");
 				}
 			}
 		}
@@ -137,7 +141,7 @@ class EventListener implements Listener
 					$player->addTitle("", "§cIsland Owner is not your friend");
 				} else {
 					$name = $player->getName();
-					SkyBlock::getInstance()->sqlite->query("UPDATE islandLevel SET blockPlace = blockPlace + 1 WHERE player = '$name'");
+					SkyBlock::getInstance()->toplevel->query("UPDATE islandLevel SET blockPlace = blockPlace + 1 WHERE player = '$name'");
 				}
 			} else {
 				if ($player->getName() != $player->getLevelNonNull()->getFolderName()) {
@@ -145,7 +149,7 @@ class EventListener implements Listener
 					$player->addTitle("", "§cIsland is lock");
 				} else {
 					$name = $player->getName();
-					SkyBlock::getInstance()->sqlite->query("UPDATE islandLevel SET blockPlace = blockPlace + 1 WHERE player = '$name'");
+					SkyBlock::getInstance()->toplevel->query("UPDATE islandLevel SET blockPlace = blockPlace + 1 WHERE player = '$name'");
 				}
 			}
 		}

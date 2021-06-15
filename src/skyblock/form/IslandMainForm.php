@@ -21,15 +21,17 @@ class IslandMainForm extends MenuForm
 		$database = $database->fetchArray(SQLITE3_ASSOC);
 		$visit = $database['visit'];
 		$lock = $database['lock'];
+
 		if ($visit == "OFF") {
-			$visitText = "§cOFF";
+			$visitText = "OFF";
 		} else {
-			$visitText = "§aON";
+			$visitText = "ON";
 		}
+
 		if ($lock == "OFF") {
-			$lockText = "§cOFF";
+			$lockText = "OFF";
 		} else {
-			$lockText = "§aON";
+			$lockText = "ON";
 		}
 		parent::__construct(
 			"Island",
@@ -38,8 +40,8 @@ class IslandMainForm extends MenuForm
 				new MenuOption("Island Teleport"),
 				new MenuOption("Island Player Kick"),
 				new MenuOption("Island Lock " . $lockText),
-				new MenuOption("Island Visit " . $visitText),
 				new MenuOption("Island Visit Open Players"),
+                new MenuOption("Island Visit " . $visitText),
 				new MenuOption("Island Partner"),
 				new MenuOption("Island Points"),
 				new MenuOption("Island Delete")
@@ -55,16 +57,16 @@ class IslandMainForm extends MenuForm
 					IslandManager::changeIslandLock($player);
 				}
 				if ($dataOption === 3) {
-					IslandManager::changeIslandVisit($player);
-				}
-				if ($dataOption === 4) {
 					$player->sendForm(new IslandVisitOpenPlayersForm($player));
 				}
+				if ($dataOption === 4) {
+                    IslandManager::changeIslandVisit($player);
+				}
 				if ($dataOption === 5) {
-					$player->sendForm(new IslandPartnerMainForm($player));
+					$player->sendForm(new IslandPartnerMainForm());
 				}
 				if ($dataOption === 6) {
-					$player->sendForm(new IslandPointsForm($player));
+					$player->sendForm(new IslandPointsForm());
 				}
 				if ($dataOption === 7) {
 					$player->sendForm(new IslandDeleteRequireForm($player));

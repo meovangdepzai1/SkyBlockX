@@ -27,7 +27,7 @@ class IslandPartnerRemoveForm extends CustomForm
 				$partner = Server::getInstance()->getPlayerExact($name);
 				if ($partner instanceof Player) {
 					if ($partner->getName() == $player->getName()) {
-						$player->getName(SkyBlock::PREFIX . "§cYou can not remove yourself!");
+						$player->sendMessage(SkyBlock::PREFIX . "§cYou can not remove yourself!");
 						return;
 					}
 					$partnerName = $partner->getName();

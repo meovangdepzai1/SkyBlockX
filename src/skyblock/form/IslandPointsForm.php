@@ -4,9 +4,10 @@
 namespace skyblock\form;
 
 
+use skyblock\SkyBlock;
+
 use pocketmine\form\MenuForm;
 use pocketmine\Player;
-use skyblock\SkyBlock;
 
 class IslandPointsForm extends MenuForm
 {
@@ -15,7 +16,7 @@ class IslandPointsForm extends MenuForm
 	{
 		$list = "";
 		$list .= "\n";
-		$database = SkyBlock::getInstance()->sqlite->query("SELECT * FROM islandLevel ORDER BY blockPlace DESC LIMIT 10;");
+		$database = SkyBlock::getInstance()->toplevel->query("SELECT * FROM islandLevel ORDER BY blockPlace DESC LIMIT 10;");
 		$t = 0;
 		while ($array = $database->fetchArray(SQLITE3_ASSOC)) {
 			$table = $t + 1;

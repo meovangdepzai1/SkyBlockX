@@ -3,12 +3,12 @@
 
 namespace skyblock\api;
 
+use skyblock\SkyBlock;
 
 use pocketmine\Player;
 use pocketmine\network\mcpe\protocol\types\ScorePacketEntry;
 use pocketmine\network\mcpe\protocol\SetScorePacket;
 use pocketmine\network\mcpe\protocol\SetDisplayObjectivePacket;
-use skyblock\SkyBlock;
 
 class ScoreboardAPI
 {
