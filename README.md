@@ -2,11 +2,11 @@
 
 > SkyBlock Plugin with SQLite3 Support
 
-# UPDATE v1.0.5
+# UPDATE v1.0.7
 
 - API Version: 3.19.1+dev
-- Add Island Top
-- Add Scoreboard
+- Add Floating Text Island Points
+- /leaderboard commands!
 
 # Features
 - Partner System
