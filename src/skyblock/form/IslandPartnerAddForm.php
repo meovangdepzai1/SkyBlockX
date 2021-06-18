@@ -15,7 +15,11 @@ use pocketmine\Server;
 class IslandPartnerAddForm extends CustomForm
 {
 
-	public function __construct(Player $player)
+    /**
+     * IslandPartnerAddForm constructor.
+     * @param Player $player
+     */
+    public function __construct(Player $player)
 	{
 		parent::__construct(
 			"Partner Add",

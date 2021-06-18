@@ -19,7 +19,13 @@ class Island extends Command
 		parent::__construct("island", "Island Menu Open");
 	}
 
-	public function execute(CommandSender $player, string $commandLabel, array $args)
+    /**
+     * @param CommandSender $player
+     * @param string $commandLabel
+     * @param array $args
+     * @return mixed|void
+     */
+    public function execute(CommandSender $player, string $commandLabel, array $args)
 	{
 		$playerName = $player->getName();
 		$database = SkyBlock::getInstance()->sqlite->query("SELECT * FROM skyblock WHERE player = '$playerName'");

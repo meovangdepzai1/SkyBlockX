@@ -15,7 +15,11 @@ use pocketmine\Server;
 class IslandPartnerRemoveForm extends CustomForm
 {
 
-	public function __construct(Player $player)
+    /**
+     * IslandPartnerRemoveForm constructor.
+     * @param Player $player
+     */
+    public function __construct(Player $player)
 	{
 		parent::__construct(
 			"Partner Remove",

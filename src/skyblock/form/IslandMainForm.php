@@ -14,7 +14,11 @@ use pocketmine\Player;
 class IslandMainForm extends MenuForm
 {
 
-	public function __construct(Player $player)
+    /**
+     * IslandMainForm constructor.
+     * @param Player $player
+     */
+    public function __construct(Player $player)
 	{
 		$name = $player->getName();
 		$database = SkyBlock::getInstance()->sqlite->query("SELECT * FROM skyblock WHERE player = '$name';");
@@ -41,7 +45,7 @@ class IslandMainForm extends MenuForm
 				new MenuOption("Island Player Kick"),
 				new MenuOption("Island Lock " . $lockText),
 				new MenuOption("Island Visit Open Players"),
-				new MenuOption("Island Visit " . $visitText),
+                new MenuOption("Island Visit " . $visitText),
 				new MenuOption("Island Partner"),
 				new MenuOption("Island Points"),
 				new MenuOption("Island Delete")
@@ -60,7 +64,7 @@ class IslandMainForm extends MenuForm
 					$player->sendForm(new IslandVisitOpenPlayersForm($player));
 				}
 				if ($dataOption === 4) {
-                    			IslandManager::changeIslandVisit($player);
+                    IslandManager::changeIslandVisit($player);
 				}
 				if ($dataOption === 5) {
 					$player->sendForm(new IslandPartnerMainForm());

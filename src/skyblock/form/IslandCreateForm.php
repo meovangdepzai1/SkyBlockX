@@ -13,7 +13,11 @@ use pocketmine\Player;
 class IslandCreateForm extends MenuForm
 {
 
-	public function __construct(Player $player)
+    /**
+     * IslandCreateForm constructor.
+     * @param Player $player
+     */
+    public function __construct(Player $player)
 	{
 		parent::__construct(
 			"Island Create",

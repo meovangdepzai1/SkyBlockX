@@ -14,7 +14,11 @@ use pocketmine\Server;
 class IslandPlayerKickForm extends MenuForm
 {
 
-	public function __construct(Player $player)
+    /**
+     * IslandPlayerKickForm constructor.
+     * @param Player $player
+     */
+    public function __construct(Player $player)
 	{
 		$options = [];
 		Server::getInstance()->loadLevel($player->getName());

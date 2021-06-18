@@ -12,7 +12,11 @@ use pocketmine\Player;
 class IslandDeleteRequireForm extends ModalForm
 {
 
-	public function __construct(Player $player)
+    /**
+     * IslandDeleteRequireForm constructor.
+     * @param Player $player
+     */
+    public function __construct(Player $player)
 	{
 		parent::__construct(
 			"Island Delete",

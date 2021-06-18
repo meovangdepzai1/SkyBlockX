@@ -11,7 +11,10 @@ use pocketmine\Player;
 class IslandPartnerMainForm extends MenuForm
 {
 
-	public function __construct()
+    /**
+     * IslandPartnerMainForm constructor.
+     */
+    public function __construct()
 	{
 		parent::__construct(
 			"Island Partner",

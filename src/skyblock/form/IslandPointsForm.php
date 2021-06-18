@@ -12,7 +12,10 @@ use pocketmine\Player;
 class IslandPointsForm extends MenuForm
 {
 
-	public function __construct()
+    /**
+     * IslandPointsForm constructor.
+     */
+    public function __construct()
 	{
 		$list = "";
 		$list .= "\n";

@@ -27,6 +27,14 @@ class EventListener implements Listener
 	{
 		$player = $event->getPlayer();
 		$name = $player->getName();
+
+		/*$database = SkyBlock::getInstance()->sqlite->query("SELECT * FROM skyblock WHERE player = '$name';");
+		if(empty($database->fetchArray(SQLITE3_ASSOC))) {
+            if(!Server::getInstance()->isLevelLoaded($player->getName())){
+                Server::getInstance()->loadLevel($player->getName());
+            }
+        }*/
+
 		$database = SkyBlock::getInstance()->toplevel->query("SELECT * FROM islandLevel WHERE player = '$name';");
 		if (empty($database->fetchArray(SQLITE3_ASSOC))) {
 			$database = SkyBlock::getInstance()->toplevel->prepare("INSERT INTO islandLevel (player, blockPlace) VALUES (:player, :blockPlace);");

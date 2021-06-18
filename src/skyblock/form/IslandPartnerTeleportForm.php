@@ -15,7 +15,11 @@ use pocketmine\Player;
 class IslandPartnerTeleportForm extends MenuForm
 {
 
-	public function __construct(Player $player)
+    /**
+     * IslandPartnerTeleportForm constructor.
+     * @param Player $player
+     */
+    public function __construct(Player $player)
 	{
 		$options = [];
 		$result = SkyBlock::getInstance()->sqlite->query("SELECT * FROM partner");
