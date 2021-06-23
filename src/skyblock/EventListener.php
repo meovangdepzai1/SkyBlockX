@@ -71,7 +71,7 @@ class EventListener implements Listener
 						$event->setCancelled(true);
 					}
 					$event->setCancelled(true);
-					$player->addTitle("", "§cIsland Owner is not your friend");
+					$player->addTitle("", "§c§l•>§eChủ đảo không phải là bạn của bạn!");
 				}
 			} else {
 				if ($player->getName() != $player->getLevelNonNull()->getFolderName()) {
@@ -79,7 +79,7 @@ class EventListener implements Listener
 						$event->setCancelled(true);
 					}
 					$event->setCancelled(true);
-					$player->addTitle("", "§cIsland is lock");
+					$player->addTitle("", "§c§l•>§eĐảo đã bị khoá");
 				}
 			}
 		}
@@ -107,18 +107,18 @@ class EventListener implements Listener
 						return true;
 					}
 					$event->setCancelled(true);
-					$player->addTitle("", "§cIsland Owner is not your friend");
+					$player->addTitle("", "§c§l•>§eChủ đảo không phải là bạn của bạn");
 				} else {
 					$name = $player->getName();
-					SkyBlock::getInstance()->toplevel->query("UPDATE islandLevel SET blockPlace = blockPlace - 1 WHERE player = '$name'");
+					SkyBlock::getInstance()->toplevel->query("§e§lTop Đảo = Đặt Block - 1 Người Chơi = '$name'");
 				}
 			} else {
 				if ($player->getName() != $player->getLevelNonNull()->getFolderName()) {
 					$event->setCancelled(true);
-					$player->addTitle("", "§cIsland is lock");
+					$player->addTitle("", "§c§l->§eĐảo đã khoá!");
 				} else {
 					$name = $player->getName();
-					SkyBlock::getInstance()->toplevel->query("UPDATE islandLevel SET blockPlace = blockPlace - 1 WHERE player = '$name'");
+					SkyBlock::getInstance()->toplevel->query("§e§lTop Đảo = Đặt Block - 1 Người Chơi = '$name'"/);
 				}
 			}
 		}
@@ -149,15 +149,15 @@ class EventListener implements Listener
 					$player->addTitle("", "§cIsland Owner is not your friend");
 				} else {
 					$name = $player->getName();
-					SkyBlock::getInstance()->toplevel->query("UPDATE islandLevel SET blockPlace = blockPlace + 1 WHERE player = '$name'");
+					SkyBlock::getInstance()->toplevel->query("§e§lTop Đảo = Đặt Block + 1 Người Chơi = '$name'");
 				}
 			} else {
 				if ($player->getName() != $player->getLevelNonNull()->getFolderName()) {
 					$event->setCancelled(true);
-					$player->addTitle("", "§cIsland is lock");
+					$player->addTitle("", "§c§lĐảo đã khoá!!");
 				} else {
 					$name = $player->getName();
-					SkyBlock::getInstance()->toplevel->query("UPDATE islandLevel SET blockPlace = blockPlace + 1 WHERE player = '$name'");
+					SkyBlock::getInstance()->toplevel->query("§e§lTop Đảo = Đặt Block + 1 Người Chơi = '$name'"");
 				}
 			}
 		}
