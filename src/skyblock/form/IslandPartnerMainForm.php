@@ -20,9 +20,9 @@ class IslandPartnerMainForm extends MenuForm
 			"Island Partner",
 			"",
 			[
-				new MenuOption("Add"),
-				new MenuOption("Remove"),
-				new MenuOption("Partner Island Teleport")
+				new MenuOption("§l§a•§eThêm§a•"),
+				new MenuOption("§l§a•§eXóa§a•"),
+				new MenuOption("§l§a•§ePartner Teleport§a•")
 			],
 			function (Player $player, int $dataOption): void {
 				if ($dataOption === 0) {
