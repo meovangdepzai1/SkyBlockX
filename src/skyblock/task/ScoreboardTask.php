@@ -44,13 +44,13 @@ class ScoreboardTask extends Task
 			ScoreboardAPI::line($player, "§l§ePLAYER", 1);
 			ScoreboardAPI::line($player, "                  ", 2);
 			ScoreboardAPI::line($player, "§7Player: §a" . $player->getName(), 3);
-			ScoreboardAPI::line($player, "§7Balance: §a" . $money, 4);
+			ScoreboardAPI::line($player, "§7Money: §a" . $money, 4);
 			ScoreboardAPI::line($player, "   ", 5);
 			ScoreboardAPI::line($player, "§l§eISLAND", 6);
 			ScoreboardAPI::line($player, "                    ", 7);
 			ScoreboardAPI::line($player, "§7Island Points: §a" . $blockPlace, 8);
 			ScoreboardAPI::line($player, "              ", 9);
-			ScoreboardAPI::line($player, "§aCode by Revenge8516", 10);
+			ScoreboardAPI::line($player, "§7angelpe.sytes.net", 10);
 		}
 	}
 
