@@ -56,7 +56,7 @@ class FloatingTextEntity extends Monster
             $dbPlayer = $array['player'];
             $dbPoints = $array['blockPlace'];
             if ($top > 5) break;
-            $nametag .= "§7[$top] > §a" . $dbPlayer . " §7| §e" . $dbPoints . "\n";
+            $nametag .= "§e§l[$top] > §9" . $dbPlayer . " §b| §e" . $dbPoints . "\n";
             $top++;
         }
         $this->setNameTag($nametag);
