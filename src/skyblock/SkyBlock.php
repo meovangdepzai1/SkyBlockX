@@ -33,7 +33,7 @@ class SkyBlock extends PluginBase
 	public const PREFIX = "§aSKYBLOCK §8> ";
 
 	/** @var string */
-	public const SCOREBOARD = "§l§6SKYBLOCK";
+	public const SCOREBOARD = "§l§eANGELPE SKYBLOCK";
 
 	public static function getInstance(): SkyBlock
 	{
@@ -44,7 +44,7 @@ class SkyBlock extends PluginBase
 	{
 		self::$instance = $this;
 
-		self::$instance->getLogger()->info("SkyBlock enabled! by 'Revenge.#0001");
+		self::$instance->getLogger()->info("SkyBlock enabled");
 
 		self::$instance->getServer()->getCommandMap()->register("island", new Island());
 		self::$instance->getServer()->getCommandMap()->register("topleaderboard", new TopLeaderboard());
@@ -56,7 +56,7 @@ class SkyBlock extends PluginBase
 		self::$instance->getServer()->getPluginManager()->registerEvents(new EventListener(), self::$instance);
 
 		$this->config = new Config(self::$instance->getDataFolder() . "config.yml", Config::YAML, [
-		    "leaderboardworld" => "world"
+		    "leaderboardworld" => "Spawn"
         ]);
 
 		$this->sqlite = new \SQLite3(self::$instance->getDataFolder() . "skyblock.db");
