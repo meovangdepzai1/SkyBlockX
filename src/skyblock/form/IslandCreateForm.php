@@ -23,7 +23,7 @@ class IslandCreateForm extends MenuForm
 			"Island Create",
 			"",
 			[
-				new MenuOption("Basic Island")
+				new MenuOption("§a§l•§eĐảo Mạc Định")
 			],
 			function (Player $player, int $dataOption): void {
 				if ($dataOption === 0) IslandManager::islandCreate($player);
