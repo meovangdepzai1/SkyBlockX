@@ -41,14 +41,14 @@ class IslandMainForm extends MenuForm
 			"Island",
 			"",
 			[
-				new MenuOption("Island Teleport"),
-				new MenuOption("Island Player Kick"),
-				new MenuOption("Island Lock " . $lockText),
-				new MenuOption("Island Visit Open Players"),
-                new MenuOption("Island Visit " . $visitText),
-				new MenuOption("Island Partner"),
-				new MenuOption("Island Points"),
-				new MenuOption("Island Delete")
+				new MenuOption("§l§a•§eTrở Về Đảo§a•"),
+				new MenuOption("§l§a•§eĐá Người Chơi§a•"),
+				new MenuOption("§l§a•§eKhoá Đảo " . $lockText. "§a•"),
+				new MenuOption("§l§a•§eThêm Người Chơi§a•"),
+                new MenuOption("§l§a•§eTham Gia Đảo Người Khác " . $visitText . "§a•"),
+				new MenuOption("§l§a•§e Đối tác§a•"),
+				new MenuOption("§l§a•§eTop Đảo§a•"),
+				new MenuOption("§l§a•§eXóa Đảo§a•")
 			],
 			function (Player $player, int $dataOption): void {
 				if ($dataOption === 0) {
