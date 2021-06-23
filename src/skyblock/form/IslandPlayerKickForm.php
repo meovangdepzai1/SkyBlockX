@@ -36,8 +36,8 @@ class IslandPlayerKickForm extends MenuForm
 				Server::getInstance()->loadLevel($player->getName());
 				foreach (Server::getInstance()->getLevelByName($player->getName())->getPlayers() as $sender) {
 					$sender->teleport(Server::getInstance()->getDefaultLevel()->getSafeSpawn(), 0, 0);
-					$sender->sendMessage(SkyBlock::PREFIX . "§e" . $player->getName() . " §aYou have been kicked off the player's island");
-					$player->sendMessage(SkyBlock::PREFIX . "§e" . $sender->getName() . " §aPlayer kicked off the island");
+					$sender->sendMessage(SkyBlock::PREFIX . "§e" . $player->getName() . " §c§l->§eBạn đã Bị Xoá Khỏi Đảo Này!");
+					$player->sendMessage(SkyBlock::PREFIX . "§e" . $sender->getName() . " §c§l->§eBạn đã xoá người chơi ra khỏi đảo");
 				}
 			}
 		);
