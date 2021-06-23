@@ -47,21 +47,21 @@ class IslandManager
 			$database->execute();
 		}
 		SkyBlock::getInstance()->getScheduler()->scheduleDelayedTask(new CreatorTask($player), 60);
-		$player->sendMessage(SkyBlock::PREFIX . "§aYou are teleported to your island");
+		$player->sendMessage(SkyBlock::PREFIX . "§c§l•>§eĐã dịch chuyển đến đảo của bạn");
 	}
 
 	public static function islandVisit(Player $player, string $selectedPlayer)
 	{
 		$selectedPlayer = Server::getInstance()->getPlayerExact($selectedPlayer);
 		if($selectedPlayer instanceof Player) {
-			$player->sendMessage(SkyBlock::PREFIX . "§cNot on player island");
+			$player->sendMessage(SkyBlock::PREFIX . "§c§l•>§eBạn Không ở đảo của mình");
 			return true;
 		}
 		if(Server::getInstance()->isLevelLoaded($selectedPlayer->getName())) {
 			$level = Server::getInstance()->getLevelByName($player->getName());
 			$player->teleport(new Position(3, 4, 5, $level));
-			$player->sendMessage(SkyBlock::PREFIX . "§e" . $selectedPlayer->getName() . " §aVisiting the player's island");
-			$selectedPlayer->sendMessage(SkyBlock::PREFIX . "§e" . $player->getName() . " §aPlayer visited the island");
+			$player->sendMessage(SkyBlock::PREFIX . "§e" . $selectedPlayer->getName() . " §c§l•>§eDịch chuyển đến đảo người khác thành công");
+			$selectedPlayer->sendMessage(SkyBlock::PREFIX . "§e" . $player->getName() . " §c§l•>§eNgười Chơi dịch chuyển đến đảo");
 		}
 	}
 
@@ -85,6 +85,7 @@ class IslandManager
 		$inventory->addItem(Item::get(Item::PUMPKIN_SEEDS, 0, 2));
 		$inventory->addItem(Item::get(Item::SUGARCANE, 0, 2));
 		$inventory->addItem(Item::get(Item::BREAD, 0, 2));
+                $inventory->addItem(Item::get(Item::DIAMOND_PICKAXE, 1, 1));
 	}
 
 	public static function changeIslandLock(Player $player)
@@ -98,7 +99,7 @@ class IslandManager
 			$database->bindValue(":player", $player->getName());
 			$database->bindValue(":lock", "ON");
 			$database->execute();
-			$player->sendMessage(SkyBlock::PREFIX . "§aYour Island Lock has been switch ON");
+			$player->sendMessage(SkyBlock::PREFIX . "§c§l->§eBạn đã khoá đảo ");
 		} else {
 			$database = SkyBlock::getInstance()->sqlite->prepare("INSERT OR REPLACE INTO skyblock (player, lock) VALUES (:player, :lock)");
 			$database->bindValue(":player", $player->getName());
@@ -119,13 +120,13 @@ class IslandManager
 			$database->bindValue(":player", $player->getName());
 			$database->bindValue(":visit", "ON");
 			$database->execute();
-			$player->sendMessage(SkyBlock::PREFIX . "§aYour Island Visit has been switch ON");
+			$player->sendMessage(SkyBlock::PREFIX . "§c§l->§eBạn đã khoá đảo");
 		} else {
 			$database = SkyBlock::getInstance()->sqlite->prepare("INSERT OR REPLACE INTO skyblock (player, visit) VALUES (:player, :visit)");
 			$database->bindValue(":player", $player->getName());
 			$database->bindValue(":visit", "OFF");
 			$database->execute();
-			$player->sendMessage(SkyBlock::PREFIX . "§aYour Island Visit has been switch OFF");
+			$player->sendMessage(SkyBlock::PREFIX . "§c§l->§eBạn đã mở đảo");
 		}
 	}
 
@@ -164,7 +165,7 @@ class IslandManager
 			}
 		}
 		rmdir($dir);
-		$player->sendMessage(SkyBlock::PREFIX . "§aYou successfully deleted your island!");
+		$player->sendMessage(SkyBlock::PREFIX . "§c§l->§eXoá Đảo thành công");
 	}
 
 }
