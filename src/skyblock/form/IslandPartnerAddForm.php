@@ -31,7 +31,7 @@ class IslandPartnerAddForm extends CustomForm
 				$partner = Server::getInstance()->getPlayerExact($name);
 				if($partner instanceof Player) {
 					if($partner->getName() == $player->getName()) {
-						$player->sendMessage(SkyBlock::PREFIX . "§cYou can not add yourself!");
+						$player->sendMessage(SkyBlock::PREFIX . "§c§l->§eLỗi khi thêm người chơi");
 						return;
 					}
 					$partnerName = $partner->getName();
