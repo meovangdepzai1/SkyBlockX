@@ -31,7 +31,7 @@ class IslandPartnerRemoveForm extends CustomForm
 				$partner = Server::getInstance()->getPlayerExact($name);
 				if ($partner instanceof Player) {
 					if ($partner->getName() == $player->getName()) {
-						$player->sendMessage(SkyBlock::PREFIX . "§cYou can not remove yourself!");
+						$player->sendMessage(SkyBlock::PREFIX . "§c§l->§eLỗi Khi Thực hiện thao tác này");
 						return;
 					}
 					$partnerName = $partner->getName();
@@ -41,7 +41,7 @@ class IslandPartnerRemoveForm extends CustomForm
 						SkyBlock::getInstance()->sqlite->query("DELETE FROM partner WHERE player = '$partnerName' AND partnerIslandName = '$islandName';");
 						$player->sendMessage(SkyBlock::PREFIX . "§aYou removed §e" . $partner->getName() . " §ain your partner list");
 					} else {
-						$player->sendMessage(SkyBlock::PREFIX . "§e" . $partner->getName() . " §cis not your partner");
+						$player->sendMessage(SkyBlock::PREFIX . "§c§l->" . $partner->getName() . " §cis not your partner");
 					}
 				}
 			}
