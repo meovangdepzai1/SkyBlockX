@@ -19,8 +19,8 @@ class IslandDeleteRequireForm extends ModalForm
     public function __construct(Player $player)
 	{
 		parent::__construct(
-			"Island Delete",
-			"{$player->getName()} Do you want your island?",
+			"§4§l∆cXoá Đảo§4∆",
+			"§9§l Này,§e{$player->getName()}, Bạn Có muốn xoá ngôi đảo này??",
 			function (Player $player, bool $choice): void {
 				if ($choice == true) {
 					IslandManager::islandDelete($player);
